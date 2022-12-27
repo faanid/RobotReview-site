@@ -5,6 +5,10 @@ const toggleBtn = document.querySelector(".sidebar-toggle");
 const closeBtn = document.querySelector(".close-btn");
 const sidebar = document.querySelector(".sidebar");
 
+const modalBtn = document.querySelector(".modal-btn");
+const modal = document.querySelector(".modal-overlay");
+const closeBtnModal = document.querySelector(".close-btn-modal");
+
 navToggle.addEventListener("click", function () {
   links.classList.toggle("show-links");
   sidebar.classList.toggle("show-sidebar");
@@ -35,3 +39,11 @@ closeBtn.addEventListener("click", function () {
 //     sidebar.classList.add("show-sidebar");
 //   }
 // });
+
+modalBtn.addEventListener("click", function () {
+  modal.classList.add("open-modal");
+});
+
+closeBtnModal.addEventListener("click", function () {
+  modal.classList.remove("open-modal");
+});
