@@ -8,6 +8,9 @@ const sidebar = document.querySelector(".sidebar");
 const modalBtn = document.querySelector(".modal-btn");
 const modal = document.querySelector(".modal-overlay");
 const closeBtnModal = document.querySelector(".close-btn-modal");
+const vidBtn = document.querySelector(".switch-btn");
+const video = document.querySelector(".video-container");
+const preloader = document.querySelector(".preloader");
 
 navToggle.addEventListener("click", function () {
   links.classList.toggle("show-links");
@@ -78,3 +81,19 @@ questions.forEach(function (question) {
 //     question.classList.toggle("show-text");
 //   });
 // });
+
+//video
+vidBtn.addEventListener("click", function () {
+  if (!vidBtn.classList.contains("slide")) {
+    vidBtn.classList.add("slide");
+    video.pause();
+  } else {
+    vidBtn.classList.remove("slide");
+    video.play();
+  }
+});
+
+//preloader
+window.addEventListener("load", function () {
+  preloader.classList.add("hide-preloader");
+});
