@@ -12,6 +12,10 @@ const vidBtn = document.querySelector(".switch-btn");
 const video = document.querySelector(".video-container");
 const preloader = document.querySelector(".preloader");
 
+const aboutBtns = document.querySelectorAll(".tab-btn");
+const about = documetn.querySelector(".about");
+const articles = document.querySelectorAll(".content");
+
 navToggle.addEventListener("click", function () {
   links.classList.toggle("show-links");
   sidebar.classList.toggle("show-sidebar");
@@ -96,4 +100,22 @@ vidBtn.addEventListener("click", function () {
 //preloader
 window.addEventListener("load", function () {
   preloader.classList.add("hide-preloader");
+});
+
+//about section
+about.addEventListener("click", function (e) {
+  const id = e.target.dataset.id;
+  if (id) {
+    //remove active from other buttons
+    aboutBtns.forEach(function (btn) {
+      btn.classList.remove("active");
+      e.target.classList.add("active");
+    });
+    //hide other articles
+    articles.forEach(function (article) {
+      article.classList.remove("active");
+    });
+    const element = document.getElementById(id);
+    element.classList.add("active");
+  }
 });
