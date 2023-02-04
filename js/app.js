@@ -165,7 +165,18 @@ const date = future.getDate();
 
 const weekday = weekdays[futureDate.getDate()];
 
-//not complete 5:23:54
-
 giveaway.textContent =
   "giveaway ends on ${weekday}, ${date} ${month} ${year} ${hours}:${minutes}am ";
+
+//future time in ms
+const futureTime = futureDate.getTime();
+
+function getRemainingTime() {
+  const today = new Date().getTime();
+  const t = futureTime - today;
+
+  //values in ms
+  const oneDay = 24 + 60 * 60;
+}
+
+getRemainingTime();
