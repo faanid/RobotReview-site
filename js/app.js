@@ -251,3 +251,38 @@ formLorem.addEventListener("submit", function (e) {
     result.innerHTML = tempText;
   }
 });
+
+//------------Grocery Bud--------------
+
+// Select Items
+const alert = document.querySelector(".alert");
+const formGro = document.querySelector(".grocery-form");
+const grocery = document.getElementById("grocery");
+const submitBtn = document.querySelector(".submit-btn");
+const container = document.querySelector(".grocery-container");
+const list = document.querySelector(".grocery-list");
+const clearBtn = document.querySelector(".clear-btn");
+
+// Edit option
+let editElement;
+let editFlag = false;
+let editID = "";
+
+// Event Listener
+// submit form
+formGro.addEventListener("submit", addItem);
+
+// Functions
+function addItem(e) {
+  e.preventDefault();
+  const valueG = grocery.value;
+  const id = new Date().getTime().toString();
+
+  if (valueG !== "" && editFlag === false) {
+    console.log("add item to the list");
+  } else if (valueG !== "" && editFlag === true) {
+    console.log("editing");
+  } else {
+    console.log("empty value");
+  }
+}
