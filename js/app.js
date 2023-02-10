@@ -305,6 +305,10 @@ function addItem(e) {
     displayAlert(`item added to the list`, "success");
     // show container
     container.classList.add("show-container");
+    // addto local storage
+    addToLocalStorage(id, value);
+    // set back to default
+    setBackToDefault();
   } else if (valueG && editFlag) {
     console.log("editing");
   } else {
@@ -323,3 +327,15 @@ function displayAlert(text, action) {
     alert.classList.remove("alert-${action}");
   }, 1000);
 }
+
+// set vack to default
+setBackToDefault();
+//local storage
+function addToLocalStorage(id, value) {
+  grocery.value = "";
+  editFlag = false;
+  editID = "";
+  submitBtn.textContent = "submit";
+}
+
+//6:58:12
