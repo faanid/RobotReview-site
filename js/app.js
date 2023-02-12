@@ -271,6 +271,8 @@ let editID = "";
 // Event Listener
 // submit form
 formGro.addEventListener("submit", addItem);
+// clear items
+clearBtn.addEventListener("click", clearItems);
 
 // Functions
 function addItem(e) {
@@ -328,7 +330,19 @@ function displayAlert(text, action) {
   }, 1000);
 }
 
-// set vack to default
+//clear items
+function clearItems() {
+  const items = document.querySelectorAll(".grocery-item");
+
+  if (items.length > 0) {
+    items.forEach(function (item) {
+      list.removeChild(item);
+    });
+    container.classList.remove("show-container");
+    displayAlert("empty list", "danger");
+  }
+}
+// set back to default
 setBackToDefault();
 //local storage
 function addToLocalStorage(id, value) {
