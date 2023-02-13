@@ -301,6 +301,11 @@ function addItem(e) {
     </div>
   </article>
     `;
+    const deleteBtnG = element.querySelector(".delete-btn");
+    const editBtnG = element.querySelector(".edit-btn");
+    deleteBtnG.addEventListener("click", deleteItem);
+    editBtnG.addEventListener("click", editItem);
+
     // append child
     list.appendChild(element);
     //display alert
@@ -308,7 +313,23 @@ function addItem(e) {
     // show container
     container.classList.add("show-container");
     // addto local storage
-    addToLocalStorage(id, value);
+    addToLocalStorage(id, valueG);
+
+    // delete function
+    function deleteItem(e) {
+      const element = e.currentTarget.parentElement.parentElement;
+      list.removeChild(element);
+      if (list.children.length === 0) {
+        container.classList.remove("show-container");
+      }
+      displayAlert("item removed", "danger");
+      setBackToDefault();
+      // remove from local storage
+      // removeFromLocalStorage(id);
+    }
+
+    // edit function
+    function editItem() {}
     // set back to default
     setBackToDefault();
   } else if (valueG && editFlag) {
@@ -341,7 +362,7 @@ function clearItems() {
     container.classList.remove("show-container");
     displayAlert("empty list", "danger");
     setBackToDefault();
-    localStorage.removeItem("list");
+    //localStorage.removeItem("list");
   }
 }
 // set back to default
