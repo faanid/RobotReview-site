@@ -376,15 +376,15 @@ function clearItems() {
   }
 }
 // set back to default
-// setBackToDefault() {
-//   grocery.value = "";
-//   editFlag = false;
-//   editID = "";
-//   submitBtn.textContent = "submit";
-// }
+function setBackToDefault() {
+  grocery.value = "";
+  editFlag = false;
+  editID = "";
+  submitBtn.textContent = "submit";
+}
 //local storage
 function addToLocalStorage(id, value) {}
 
 function removeFromLocalStorage(id) {}
 
-//7:17:19
+//7:24:31
