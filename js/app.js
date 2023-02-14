@@ -318,6 +318,7 @@ function addItem(e) {
     // delete function
     function deleteItem(e) {
       const element = e.currentTarget.parentElement.parentElement;
+      const id = element.dataset.id;
       list.removeChild(element);
       if (list.children.length === 0) {
         container.classList.remove("show-container");
@@ -329,7 +330,16 @@ function addItem(e) {
     }
 
     // edit function
-    function editItem() {}
+    function editItem() {
+      const element = e.currentTarget.parentElement.parentElement;
+      // set edit item
+      editElement = e.currentTarget.parentElement.previousElementSibling;
+      // set form value
+      grocery.value = editElement.innerHTML;
+      editFlag = true;
+      editID = element.dataset.id;
+      submitBtn.textContent = "edit";
+    }
     // set back to default
     setBackToDefault();
   } else if (valueG && editFlag) {
@@ -366,13 +376,15 @@ function clearItems() {
   }
 }
 // set back to default
-setBackToDefault();
+// setBackToDefault() {
+//   grocery.value = "";
+//   editFlag = false;
+//   editID = "";
+//   submitBtn.textContent = "submit";
+// }
 //local storage
-function addToLocalStorage(id, value) {
-  grocery.value = "";
-  editFlag = false;
-  editID = "";
-  submitBtn.textContent = "submit";
-}
+function addToLocalStorage(id, value) {}
 
-//6:58:12
+function removeFromLocalStorage(id) {}
+
+//7:17:19
