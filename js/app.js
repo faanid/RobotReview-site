@@ -388,17 +388,34 @@ function setBackToDefault() {
   submitBtn.textContent = "submit";
 }
 //local storage
-function addToLocalStorage(id, value) {}
+function addToLocalStorage(id, value) {
+  const grocery = { id: id, value: value };
+  let items = getLocaStorage();
+  items.push(grocery);
+  localStorage.setItem("list", JSON.stringify(items));
+}
 
-function removeFromLocalStorage(id) {}
+function removeFromLocalStorage(id) {
+  let items = getLocaStorage();
+  items = items.filter(function (item) {
+    if (item.id !== id) {
+      return item;
+    }
+  });
+  localStorage.setItem("list", JSON.stringify(items));
+}
 function editLocalStorage(id, value) {}
+function getLocaStorage() {
+  localStorage.getItem("list") ? JSON.parse(localStorage.getItem("list")) : [];
+}
 //localStorage API
 //setitem
 //getitem
 //removeItem
 //save as strings
 
-localStorage.setItem("orange", JSON.stringify(["item1", "item2"]));
-const oranges = JSON.parse(localStorage.getItem("orange"));
-localStorage.removeItem("orange");
+// localStorage.setItem("orange", JSON.stringify(["item1", "item2"]));
+// const oranges = JSON.parse(localStorage.getItem("orange"));
+// localStorage.removeItem("orange");
+
 //7:34:49
