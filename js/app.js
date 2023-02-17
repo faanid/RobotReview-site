@@ -444,4 +444,4 @@ function createListItem(id, value) {
   list.appendChild(element);
 }
 
-//7:34:49
+//------Slider-----
