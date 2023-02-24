@@ -205,8 +205,9 @@ Sidebar
   transform: rotate(360deg);
 }
 .logo {
-  justify-self: center;
-  height: 40px;
+  /* justify-self: left; */
+  height: 80px;
+  max-width: 100%; 
 }
 
 .links a {
@@ -293,9 +294,9 @@ nav {
   color: var(--clr-primary-1);
   transform: rotate(90deg);
 }
-.logo {
+.logo2 {
   
-  height: 40px;
+  height: 35px;
 }
 .links a {
   color: var(--clr-grey-3);
