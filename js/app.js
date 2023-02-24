@@ -1,40 +1,42 @@
+//1
 const navToggle = document.querySelector(".nav-toggle");
 const links = document.querySelector(".links");
-
+//2
 const toggleBtn = document.querySelector(".sidebar-toggle");
 const closeBtn = document.querySelector(".close-btn");
 const sidebar = document.querySelector(".sidebar");
-
+//3
 const modalBtn = document.querySelector(".modal-btn");
 const modal = document.querySelector(".modal-overlay");
 const closeBtnModal = document.querySelector(".close-btn-modal");
 const vidBtn = document.querySelector(".switch-btn");
 const video = document.querySelector(".video-container");
 const preloader = document.querySelector(".preloader");
-
+//4
 const aboutBtns = document.querySelectorAll(".tab-btn");
 const about = documetn.querySelector(".about");
 const articles = document.querySelectorAll(".content");
 
 navToggle.addEventListener("click", function () {
   links.classList.toggle("show-links");
-  sidebar.classList.toggle("show-sidebar");
+  // sidebar.classList.toggle("show-sidebar");
 });
 
 // or
 // navToggle.addEventListener("click", function () {
-// if(links.classList.contains('show-links')){
-//     links.classList.remove('show-links')
-// }else{
-//     links.classList.add("show-links")
-// }
+//   if (links.classList.contains("show-links")) {
+//     links.classList.remove("show-links");
+//   } else {
+//     links.classList.add("show-links");
+//   }
 // });
 
 // sidebar
 
-// toggleBtn.addEventListener("click", function () {
+toggleBtn.addEventListener("click", function () {
+  sidebar.classList.toggle("show-sidebar");
+});
 
-// });
 closeBtn.addEventListener("click", function () {
   sidebar.classList.remove("show-sidebar");
 });
@@ -98,9 +100,9 @@ vidBtn.addEventListener("click", function () {
 });
 
 //preloader
-window.addEventListener("load", function () {
-  preloader.classList.add("hide-preloader");
-});
+// window.addEventListener("load", function () {
+//   preloader.classList.add("hide-preloader");
+// });
 
 //about section
 about.addEventListener("click", function (e) {
